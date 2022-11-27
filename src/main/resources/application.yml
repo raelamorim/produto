@@ -1,0 +1,14 @@
+micronaut:
+   application:
+      name: grpcexemplo
+
+grpc:
+   server:
+      port: 50051
+
+aws:
+   credentials:
+      access-key: fakeAccessKeyId
+      secret-key: fakeSecretAccessKey
+   endpoint-url: http://localhost:4566
+   region: sa-east-1

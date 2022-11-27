@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.com.itau.pp8.produto.services";
+option java_outer_classname = "ProdutoProto";
+option objc_class_prefix = "HLW";
+
+package br.com.itau.pp8.produto.services;
+
+service ProdutoService {
+  rpc send (FindProdutoByIdRequest) returns (FindProdutoByIdReply) {}
+}
+
+message FindProdutoByIdRequest {
+  int32 idProduto = 1;
+}
+
+message FindProdutoByIdReply {
+  string nomeProduto = 1;
+  bool encerrado = 2;
+  repeated string segmentos = 3;
+  repeated CanalOperacaoReply canaisOperacoes = 4;
+  int32 risco = 5;
+}
+
+message CanalOperacaoReply {
+  int32 idCanal = 1;
+  int32 idOperacao = 2;
+}
+
